@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-
 """
 На вход программы поступает строка из целых чисел, записанных через пробел. Напишите
 функцию get_list , которая преобразовывает эту строку в список из целых чисел и
@@ -11,14 +10,14 @@
 отсортированный список на экране.
 """
 
-
 def decorate_function(func):
-    def wrapper(*args):
+
+    def sorting(*args):
         if args:
             values = [int(arg) for arg in args]
             values.sort()
             func(values)
-    return wrapper
+    return sorting
 
 
 @decorate_function

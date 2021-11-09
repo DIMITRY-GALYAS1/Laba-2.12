@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 def decorator_function(func):
     def wrapper():
         print('Функция-обёртка!')
@@ -13,4 +16,5 @@ def hello_world():
     print("Hello, world!")
 
 
-hello_world()
+if __name__ == '__main__':
+    hello_world()
