@@ -10,20 +10,17 @@
 отсортированный список на экране.
 """
 
-def decorate_function(func):
 
-    def sorting(*args):
-        if args:
-            values = [int(arg) for arg in args]
-            values.sort()
-            func(values)
+def decorator_function(func):
+    def sorting(z):
+        return sorted(func(z))
     return sorting
 
 
-@decorate_function
-def get_list(args):
-    print(args)
+@decorator_function
+def get_list(z):
+    return [int(i) for i in z.split()]
 
 
 if __name__ == '__main__':
-    get_list(*list(map(int, input('Введите список через пробел: ').split(' '))))
+    print(get_list(input('Введите числа через пробел: ')))
